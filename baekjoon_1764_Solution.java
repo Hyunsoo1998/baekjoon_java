@@ -19,7 +19,7 @@ public class baekjoon_1764_Solution {
 
         }
         int count =0; //듣도 보도 못한 사람의 수를 저장할 변수 선언.
-        
+
         for(int j = 0 ; j<M ; j++) {
             String tmp = br.readLine();
             if(set.contains(tmp)) {
