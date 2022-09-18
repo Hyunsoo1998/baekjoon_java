@@ -47,9 +47,6 @@ public class bj_1920_2 {
 
         Arrays.sort(arr1);
 
-
-
-
     }
     static void Output() throws IOException {
         sb= new StringBuilder();
