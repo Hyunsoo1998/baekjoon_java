@@ -16,22 +16,27 @@ public class Binary_Search_Lower_Upper_Bound {
             }
             return X;
         }
-        static int lower_bound(int[] arr, int L, int R, int X) {
-            while (L < R) {
-                int mid = (L + R) / 2;
-                if (arr[mid] >= X) R = mid;
-                else L = mid + 1;
-            }
-            return L;
+    static int lower_bound(int[] arr, int L, int R, int X) {
+        while (L < R) {
+            int mid = (L + R) / 2;
+            if (arr[mid] < X)
+                L=mid+1;
+            else
+                R = mid ;
         }
-        static int upper_bound(int[] arr, int L, int R, int X) {
-            while (L < R) {
-                int mid = (L + R) / 2;
-                if (arr[mid] > X) R = mid; // X 이상이 아닌 초과의 수 'X 보다 큰 수'
-                else L = mid + 1;
-            }
-            return L;
+        return L;
+    }
+    static int upper_bound(int[] arr, int L, int R, int X) {
+        while (L < R) {
+            int mid = (L + R) / 2;
+            if (arr[mid] <= X)
+                L=mid+1; // X 이상이 아닌 초과의 수 'X 보다 큰 수'
+            else
+                R=mid;
         }
+        return R;
+    }
+
         public static void main(String[] args) {
             System.out.println(binarySearch(arr, 0, arr.length - 1, 4)); // 3번 인덱스 return
             // LowerBound , UpperBound를 같은 파라미터로 Lower -> Upper || Upper -> Lower 로 변경해서 실행해보세요
