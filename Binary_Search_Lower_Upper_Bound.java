@@ -19,22 +19,22 @@ public class Binary_Search_Lower_Upper_Bound {
     static int lower_bound(int[] arr, int L, int R, int X) {
         while (L < R) {
             int mid = (L + R) / 2;
-            if (arr[mid] < X)
-                L=mid+1;
+            if ( X<=arr[mid])
+               R= mid;
             else
-                R = mid ;
+                L=mid+1;
         }
         return L;
     }
     static int upper_bound(int[] arr, int L, int R, int X) {
         while (L < R) {
             int mid = (L + R) / 2;
-            if (arr[mid] <= X)
-                L=mid+1; // X 이상이 아닌 초과의 수 'X 보다 큰 수'
+            if (X<arr[mid])
+                R=mid;// X 이상이 아닌 초과의 수 'X 보다 큰 수'
             else
-                R=mid;
+                L=mid+1;
         }
-        return R;
+        return L;
     }
 
         public static void main(String[] args) {
