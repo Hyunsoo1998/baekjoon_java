@@ -1,41 +1,54 @@
 package baekjoon_java;
 
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 public class baekjoon_2775 {
-    public static void main(String[] args) {
-        Scanner in= new Scanner(System.in);
+    static int T ,k , n,arr[][];
+    static StringBuilder sb;
+    static BufferedReader br ;
+    public static void main(String[] args) throws IOException{
+        Input();
 
+    }
+    static void Input()throws IOException {
+        br = new BufferedReader (new InputStreamReader(System.in));
+        T= Integer.parseInt(br.readLine());
 
+        sb= new StringBuilder();
 
-        int[][] apt = new int[15][15];
+        Find();
+        for(int i = 0 ; i< T; i++) {
 
-        for(int i = 0; i < 15; i++) {
-            apt[i][1] = 1;
-            apt[0][i] = i;
+            k=Integer.parseInt(br.readLine());
+            n= Integer.parseInt(br.readLine());
+
+            sb.append(arr[k][n]).append('\n');
+
         }
+        System.out.println(sb);
+    }
 
+    static void Find() {
+        arr= new int [15][15];
 
-        for(int i1 = 1; i1 < 15; i1 ++) {
+        for(int i = 0 ; i < 15; i ++) {
+            arr[i][1]=1;
+            arr[0][i]=i;
 
-            for(int i2 = 2; i2 < 15; i2++) {
-                apt[i1][i2] = apt[i1][i2 - 1] + apt[i1 - 1][i2];
+        }
+        for(int i = 1; i < 15; i ++) {
+            for(int j = 2 ; j < 15; j ++) {
+
+                arr[i][j]= arr[i-1][j]+arr[i][j-1];
+
             }
         }
 
-        int T = in.nextInt();
-
-        for(int i3 = 0; i3 < T; i3++) {
-            int k = in.nextInt();
-            int n = in.nextInt();
-            System.out.println(apt[k][n]);
-        }
-
-
-
-
-        }
 
 
 
     }
+
+    }
+
