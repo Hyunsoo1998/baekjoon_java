@@ -13,7 +13,6 @@ public class baekjoon_1806 {
 
         Input();
 
-
     }
 
     static void Input() throws IOException {
