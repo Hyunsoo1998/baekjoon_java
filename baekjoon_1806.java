@@ -35,19 +35,18 @@ public class baekjoon_1806 {
         int min = 100001;
 
         while (true) {
-            if (sum < S) {
-                sum += arr[second++];
+            if (sum >= S) {
+                sum-=arr[first++];
+
+                min = Math.min(min, ((second - first) + 1));
 
             } else if (N == second) {
                 break;
 
             } else {
-                sum -= arr[first++];
-
-                min = Math.min(min, ((second - first) + 1));
+                sum+= arr[second++];
 
             }
-
 
         }
         if(min==100001) {
