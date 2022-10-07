@@ -34,9 +34,11 @@ public class baekjoon_11279 {
 
             if(input == 0 ) {
 
-                if(pq.isEmpty()) {
+                if(pq.isEmpty()) { //큐가 비어있다면 0을 StringBuilder에 넣어준다.
+
                     sb.append(0).append('\n');
                 }else {
+                    //큐가 비어있지 않다면 값을 가져오고 삭제함. StringBuilder에 가져온 값을 넣어줌 .
                     sb.append(pq.poll()).append('\n');
                 }
 
