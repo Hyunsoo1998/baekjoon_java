@@ -28,7 +28,7 @@ public class boj_9375_sol {
 
                 if (hm.containsKey(kind)) {
                     hm.put(kind, hm.get(kind) + 1);
-                    
+
                 }
                 else {
                     hm.put(kind, 1);
